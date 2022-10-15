@@ -1,0 +1,9 @@
+# Ignora archivos del sisitema Mac
+.DS_Store
+
+# Ignora carpeta Code
+__pycache__
+
+
+# Ignora carpeta venv de backend
+/venv
