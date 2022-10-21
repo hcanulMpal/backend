@@ -17,5 +17,5 @@ def create_app(config_name='development'):
         db.create_all()
 
     funcToken = fTocken()
-    funcToken.setDbFuncionarios()
+    funcToken.setDbOfficials()
     return app
