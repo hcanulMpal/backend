@@ -1,8 +1,3 @@
-from asyncio.windows_events import NULL
-import email
-from email.policy import default
-from enum import unique
-from unicodedata import name
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import relationship
 import datetime
@@ -48,7 +43,7 @@ class Token(db.Model):
 
 class Officials(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False) 
-    id_officials = db.Column(db.Intiger, unique=True, nullable=False) #Id del funcionario
+    id_officials = db.Column(db.Integer, unique=True, nullable=False) #Id del funcionario
     name = db.Column(db.String(100), nullable=False) #Nombre del funcionario
     semblance = db.Column(db.String(200), nullable=False) #Semblanza del funcionario
     url_photo = db.Column(db.String(200), unique=True, nullable=False) #Direccion url de la foto del funcionario
@@ -61,7 +56,7 @@ class Officials(db.Model):
 
 class Governings(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False) 
-    id_goverming = db.Column(db.Intiger, unique=True, nullable=False) #Id del gobernante
+    id_goverming = db.Column(db.Integer, unique=True, nullable=False) #Id del gobernante
     name = db.Column(db.String(100), nullable=False) #Nombre del gobernante
     semblance = db.Column(db.String(200), nullable=False) #Semblanza del gobernante
     url_photo = db.Column(db.String(200), unique=True, nullable=False) #Direccion url de la foto del gobernante
