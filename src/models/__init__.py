@@ -41,14 +41,27 @@ class Token(db.Model):
     update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
 
 
-class Funcionarios(db.Model):
-    id = db.Column(db.Integer, primary_key = True, autoincrement = True, nullable = False)
-    id_funcionario = db.Column(db.Integer, nullable = False)
-    nombre = db.Column(db.String(85), nullable = False)
-    semblanza = db.Column(db.String(200), nullable =True)
-    url_foto = db.Column(db.String(200), nullable = False)
-    dependencia = db.Column(db.String(75), nullable = False)
-    email = db.Column(db.String(75), nullable = False)
-    status = db.Column(db.Boolean, nullable = False)
+class Officials(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False) 
+    id_officials = db.Column(db.Integer, unique=True, nullable=False) #Id del funcionario
+    name = db.Column(db.String(100), nullable=False) #Nombre del funcionario
+    semblance = db.Column(db.String(200), nullable=False) #Semblanza del funcionario
+    url_photo = db.Column(db.String(200), unique=True, nullable=False) #Direccion url de la foto del funcionario
+    dependence = db.Column(db.String(100), nullable=False) #Dependencia del funcionario
+    email = db.Column(db.String(100), unique=True, nullable=False) #Direccion de contacto del funcionario
+    status = db.Column(db.Boolean, nullable=False) #Si el funcionario esta activo
+    created_date = db.Column(db.DateTime, default=datetime.datetime.now)
+    update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
+
+
+class Governings(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False) 
+    id_goverming = db.Column(db.Integer, unique=True, nullable=False) #Id del gobernante
+    name = db.Column(db.String(100), nullable=False) #Nombre del gobernante
+    semblance = db.Column(db.String(200), nullable=False) #Semblanza del gobernante
+    url_photo = db.Column(db.String(200), unique=True, nullable=False) #Direccion url de la foto del gobernante
+    status = db.Column(db.Boolean, nullable=False) #Si el gobernante esta activo o no
+    num_goverming = db.Column(db.String(30), unique=True, nullable=False) #Posicion del gobernante
+    email = db.Column(db.String(50), nullable=True) #Direccion de contacto del gobernante
     created_date = db.Column(db.DateTime, default=datetime.datetime.now)
     update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
