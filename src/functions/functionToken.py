@@ -8,11 +8,14 @@ class fTocken:
    
     def validToken(self):
         resp = base.query(Token).order_by(Token.created_date.desc()).first()
-        resp = 0
-        if resp > 0:
-            token = resp.token
+        print(resp)
+        if resp is not None:
+            if resp.count_date > 0:
+                token = resp.code
+            else:
+                token = self.getToken()
         else:
-            token = self.getToken()
+                token = self.getToken()
         return token
 
 
@@ -56,5 +59,4 @@ class fTocken:
                 }
             )
         print(data)
-            # print(unicodedata.normalize('NFKD', item["dependencia_funcionario"]).encode('ASCII', 'ignore'))
 
