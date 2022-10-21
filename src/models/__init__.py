@@ -39,3 +39,16 @@ class Token(db.Model):
     count_date = db.Column(db.Integer)#Contador de dias para la expiracion
     created_date = db.Column(db.DateTime, default=datetime.datetime.now)
     update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
+
+
+class Funcionarios(db.Model):
+    id = db.Column(db.Integer, primary_key = True, autoincrement = True, nullable = False)
+    id_funcionario = db.Column(db.Integer, nullable = False)
+    nombre = db.Column(db.String(85), nullable = False)
+    semblanza = db.Column(db.String(200), nullable =True)
+    url_foto = db.Column(db.String(200), nullable = False)
+    dependencia = db.Column(db.String(75), nullable = False)
+    email = db.Column(db.String(75), nullable = False)
+    status = db.Column(db.Boolean, nullable = False)
+    created_date = db.Column(db.DateTime, default=datetime.datetime.now)
+    update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
