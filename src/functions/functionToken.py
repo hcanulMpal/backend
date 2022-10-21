@@ -43,4 +43,4 @@ class fTocken:
     def setDbFuncionarios(self):
         response  = self.getFuncionarios()
         for item in response.json()['dataFuncionarios']:
-            print(item)
+            print(str(item).encode('utf-8'))
