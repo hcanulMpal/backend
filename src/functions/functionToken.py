@@ -1,4 +1,4 @@
-from .. ..models import db, Token
+from ..models import db, Token
 import requests
 
 base = db.session
@@ -7,7 +7,8 @@ class fTocken:
    
     def validToken(self):
         resp = base.query(Token).order_by(Token.created_date.desc()).first()
-        if resp.count_date > 0:
+        resp = 0
+        if resp > 0:
             token = resp.token
         else:
             token = self.getToken()
@@ -17,6 +18,7 @@ class fTocken:
     def getToken(self):
         response = requests.post("https://apicarrillo.felipecarrillopuerto.gob.mx/api/Keys/generate")
         data = response.json()
+        print(data)
         if data['status']:
             token = Token(
                 code = data['token'],
@@ -24,21 +26,21 @@ class fTocken:
                 count_date = 30,
             )
             base.add(token)
-            base.comiit()
+            base.commit()
         return data['token']
 
 
     def getFuncionarios(self):
-        response = requests.get("https://apicarrillo.felipecarrillopuerto.gob.mx/api/funcionarios/get_all?API_KEY_FCP=" + self.validToken())
+        response = requests.get("https://apicarrillo.felipecarrillopuerto.gob.mx/api/funcionarios/get_all?API_KEY_FCP=" + str(self.validToken()))
         return response
 
 
     def getRegidores(self):
-        response = requests.get("https://apicarrillo.felipecarrillopuerto.gob.mx/api/regidores/get_all?API_KEY_FCP=" + self.validToken())
+        response = requests.get("https://apicarrillo.felipecarrillopuerto.gob.mx/api/regidores/get_all?API_KEY_FCP=" + str(self.validToken()))
         return response
 
 
     def setDbFuncionarios(self):
         response  = self.getFuncionarios()
-        for item in response[1]:
+        for item in response.json()['dataFuncionarios']:
             print(item)

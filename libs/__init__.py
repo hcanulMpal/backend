@@ -1,7 +1,8 @@
 from flask import Flask
 from .config import config
 import pymysql
-from src.modules.models import db
+from src.models import db
+from src.functions import fTocken
 
 
 
@@ -15,5 +16,6 @@ def create_app(config_name='development'):
     with app.app_context():
         db.create_all()
 
-
+    funcToken = fTocken()
+    funcToken.setDbFuncionarios()
     return app

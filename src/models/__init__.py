@@ -34,7 +34,7 @@ class Role(db.Model):
 
 class Token(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
-    code = db.Column(db.Integer, unique=True, nullable=False)#Token Generado
+    code = db.Column(db.String(32), unique=True, nullable=False)#Token Generado
     final_date = db.Column(db.Date)#Fecha en la que expeira el Token
     count_date = db.Column(db.Integer)#Contador de dias para la expiracion
     created_date = db.Column(db.DateTime, default=datetime.datetime.now)

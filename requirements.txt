@@ -3,3 +3,4 @@ Flask-SQLAlchemy
 PyMySQL
 secret-key-generator
 SQLAlchemy
+requests
