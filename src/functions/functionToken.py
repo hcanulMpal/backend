@@ -60,7 +60,6 @@ class fTocken:
                 base.commit()
             except Exception as error:
                 print(error)
-        
         print("Base de Datos Actualizada")
         return "Base de Datos Actualizada", 200
 
