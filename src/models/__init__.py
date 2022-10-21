@@ -67,6 +67,6 @@ class Governings(db.Model):
     url_photo = db.Column(db.String(200), unique=True, nullable=False) #Direccion url de la foto del gobernante
     status = db.Column(db.Boolean, nullable=False) #Si el gobernante esta activo o no
     num_goverming = db.Column(db.String(30), unique=True, nullable=False) #Posicion del gobernante
-    email = db.Column(db.String(50), nullable=False, default=NULL) #Direccion de contacto del gobernante
+    email = db.Column(db.String(50), nullable=False) #Direccion de contacto del gobernante
     created_date = db.Column(db.DateTime, default=datetime.datetime.now)
     update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
