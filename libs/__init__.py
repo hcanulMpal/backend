@@ -2,7 +2,7 @@ from flask import Flask
 from .config import config
 import pymysql
 from src.models import db
-from src.functions import fTocken
+from src.controllers.validated import valid
 
 
 
@@ -16,6 +16,7 @@ def create_app(config_name='development'):
     with app.app_context():
         db.create_all()
 
-    funcToken = fTocken()
-    funcToken.setDbOfficials()
+    valid.validOfficials()
+    valid.validGovernings()
+    
     return app

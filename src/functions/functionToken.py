@@ -1,5 +1,4 @@
-import unicodedata
-from ..models import db, Token, Governings, Officials
+from ..models import db, Token
 import requests
 
 base = db.session
@@ -17,7 +16,7 @@ class fTocken:
         else:
                 token = self.getToken()
         return token
-
+        
 
     def getToken(self):
         response = requests.post("https://apicarrillo.felipecarrillopuerto.gob.mx/api/Keys/generate")
@@ -31,55 +30,3 @@ class fTocken:
             base.add(token)
             base.commit()
         return data['token']
-
-
-    def getOfficials(self):
-        response = requests.get("https://apicarrillo.felipecarrillopuerto.gob.mx/api/funcionarios/get_all?API_KEY_FCP=" + str(self.validToken()))
-        return response
-
-
-    def getGovernings(self):
-        response = requests.get("https://apicarrillo.felipecarrillopuerto.gob.mx/api/regidores/get_all?API_KEY_FCP=" + str(self.validToken()))
-        return response
-
-
-    def setDbOfficials(self):
-        response  = self.getOfficials()
-        for item in response.json()['dataFuncionarios']:
-            try:
-                officials = Officials(
-                    id_officials = int(item["id_funcionario"]),
-                    name = unicodedata.normalize('NFKD', item["nombre_funcionario"]).encode('ASCII', 'ignore'),
-                    semblance = unicodedata.normalize('NFKD', item["semblanza_funcionario"]).encode('ASCII', 'ignore'),
-                    url_photo = item["foto_funcionario"],
-                    dependence = unicodedata.normalize('NFKD', item["dependencia_funcionario"]).encode('ASCII', 'ignore'),
-                    email = item["contacto_funcionario"],
-                    status = int(item["status_funcionario"]), 
-                )
-                base.add(officials)
-                base.commit()
-            except Exception as error:
-                print(error)
-        print("Base de Datos Actualizada")
-        return "Base de Datos Actualizada", 200
-
-
-    def setDbGovernings(self):
-        response = self.getOfficials()
-        for item in response.json()['dataCabildo']:
-            try:
-                governings = Governings(
-                    id_governing = int(item["id_regidor"]),
-                    name = unicodedata.normalize('NFKD', item["nombre_regidor"]).encode('ASCII', 'ignore'),
-                    semblance = unicodedata.normalize('NFKD', item["semblanza_regidor".encode('ASCII', 'ignore')]),
-                    url_photo = item["foto_regidor"],
-                    status = int(item["status_regidor"]),
-                    num_governing = item["numero_regidor"],
-                    email = item["correo_regidor"],
-                )
-                base.add(governings)
-                base.commit()
-            except Exception as error:
-                print(error)
-            print("Base de datos actualizada")
-            return "Base de datos actualizada", 200
