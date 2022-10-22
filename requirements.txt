@@ -4,3 +4,6 @@ PyMySQL
 secret-key-generator
 SQLAlchemy
 requests
+marshmallow
+marshmallow_sqlalchemy 
+flask_marshmallow
