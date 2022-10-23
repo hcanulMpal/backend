@@ -15,4 +15,3 @@ class OfficialsCtl:
       else:
          return "la base de datos presento un error"
       
-

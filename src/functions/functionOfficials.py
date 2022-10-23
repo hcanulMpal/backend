@@ -4,6 +4,12 @@ import unicodedata
 base = db.session
 
 class dbOfficials:
+
+
+    def is_validate(self):
+        if Officials.query.first():
+            return True
+
     
     def setDbOfficials(self, listOficials):
         response  = listOficials

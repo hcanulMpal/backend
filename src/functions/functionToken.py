@@ -5,6 +5,7 @@ import requests
 base = db.session
 
 class fTocken:
+
    
     def validToken(self):
         resp = base.query(Token).order_by(Token.created_date.desc()).first()

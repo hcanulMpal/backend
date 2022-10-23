@@ -2,7 +2,7 @@ from flask import Flask
 from .config import config
 import pymysql
 from src.models import db
-from src.controllers import OfficialsCtl
+from src.controllers.validate import Valide
 
 
 
@@ -16,6 +16,5 @@ def create_app(config_name='development'):
     with app.app_context():
         db.create_all()
 
-    officials = OfficialsCtl()
-    officials.getOfficials()
+    Valide().valideTables()
     return app
