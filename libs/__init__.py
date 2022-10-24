@@ -17,4 +17,11 @@ def create_app(config_name='development'):
         db.create_all()
 
     Valide().valideTables()
+
+    #TODO: importacion para asignar a los Blueprints
+    from src.routes import landing
+
+     #TODO: Configuracion de los BluePrints
+    app.register_blueprint(landing)
+    
     return app
