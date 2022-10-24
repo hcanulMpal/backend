@@ -16,3 +16,7 @@ class GoverningsCtl:
          return "La base de datos fue actualizada"
         else:
             return "la base de datos presento un error"
+
+
+    def setGovernings(self):
+        return Governings.setGovernings()
