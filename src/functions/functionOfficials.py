@@ -1,21 +1,19 @@
-import unicodedata
 from ..models import db, Officials
-from .functionToken import fTocken
-import requests
+import unicodedata
 
-FuncT = fTocken()
 base = db.session
 
-class fOfficials:
-
-    def getOfficials(self):
-        response = requests.get("https://apicarrillo.felipecarrillopuerto.gob.mx/api/funcionarios/get_all?API_KEY_FCP=" + str(FuncT.validToken()))
-        return response
+class dbOfficials:
 
 
-    def setDbOfficials(self):
-        response  = self.getOfficials()
-        for item in response.json()['dataFuncionarios']:
+    def is_validate(self):
+        if Officials.query.first():
+            return True
+
+    
+    def setDbOfficials(self, listOficials):
+        response  = listOficials
+        for item in response['dataFuncionarios']:
             try:
                 officials = Officials(
                     id_officials = int(item["id_funcionario"]),
@@ -30,5 +28,4 @@ class fOfficials:
                 base.commit()
             except Exception as error:
                 print(error)
-        print("Base de Datos Actualizada")
-        return "Base de Datos Actualizada", 200
+        return True
