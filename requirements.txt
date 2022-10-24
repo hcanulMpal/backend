@@ -4,6 +4,7 @@ PyMySQL
 secret-key-generator
 SQLAlchemy
 requests
+Flask-Cors
+flask-marshmallow
 marshmallow
-marshmallow_sqlalchemy 
-flask_marshmallow
+marshmallow-sqlalchemy
