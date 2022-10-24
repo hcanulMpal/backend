@@ -1,4 +1,5 @@
 from ..models import db, Officials
+from ..schemas import schemaOrganigram, schemaOrganigrams
 import unicodedata
 
 base = db.session
@@ -17,10 +18,10 @@ class dbOfficials:
             try:
                 officials = Officials(
                     id_officials = int(item["id_funcionario"]),
-                    name = unicodedata.normalize('NFKD', item["nombre_funcionario"]).encode('ASCII', 'ignore'),
-                    semblance = unicodedata.normalize('NFKD', item["semblanza_funcionario"]).encode('ASCII', 'ignore'),
+                    name = str(unicodedata.normalize('NFKD', item["nombre_funcionario"]).encode('ASCII', 'ignore').decode()),
+                    semblance = str(unicodedata.normalize('NFKD', item["semblanza_funcionario"]).encode('ASCII', 'ignore').decode()),
                     url_photo = item["foto_funcionario"],
-                    dependence = unicodedata.normalize('NFKD', item["dependencia_funcionario"]).encode('ASCII', 'ignore'),
+                    dependence = str(unicodedata.normalize('NFKD', item["dependencia_funcionario"]).encode('ASCII', 'ignore').decode()),
                     email = item["contacto_funcionario"],
                     status = int(item["status_funcionario"]), 
                 )
@@ -29,3 +30,7 @@ class dbOfficials:
             except Exception as error:
                 print(error)
         return True
+
+
+    def setOfficialsOrganigrama(self):
+        return schemaOrganigrams.jsonify(Officials.query.all())
