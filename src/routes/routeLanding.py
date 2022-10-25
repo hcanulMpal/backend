@@ -8,16 +8,16 @@ cors = CORS(landing, resources={ r"/api/*":{"origins":"*"}})
 
 
 Offi = OfficialsCtl()
-Gobs = GoberningsCtl()
+Gobs = GoverningsCtl()
 
-@landing.route("/api/landign/regidores", methods=['GET'])
+@landing.route("/api/landign/funcionarios", methods=['GET'])
 def setOfficials():
     return Offi.setOfficials() 
 
 
-@landing.route("/api/landign/gobernadores", methods=['GET'])
+@landing.route("/api/landign/regidores", methods=['GET'])
 def setGobernings():
-    return Gobs.setGobernings() 
+    return Gobs.setGoverning()
 
 
 

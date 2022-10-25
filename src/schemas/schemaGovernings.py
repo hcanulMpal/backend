@@ -7,7 +7,7 @@ ma = Marshmallow()
 #TODO: Declaracion de Schema
 class Schema_Governings(ma.Schema):
     class Meta:
-        fields = ('id_goverming', 'name', 'semblance', 'url_photo', 'num_goverming')
+        fields = ('id_governing', 'name', 'semblance', 'url_photo', 'num_governing')
 
 
 #TODO: INstancia de distintos Schemas

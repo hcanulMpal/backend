@@ -29,5 +29,5 @@ class dbGovernings:
         return True
 
 
-    def setGovernings(self):
+    def setGoverningsOrganigram(self):
         return schemasGorvernings.jsonify(Governings.query.all())

@@ -18,4 +18,7 @@ class GoverningsCtl:
             return "la base de datos presento un error"
 
 
+    def setGoverning(self):
+        return Governings.setGoverningsOrganigram()
+
    
