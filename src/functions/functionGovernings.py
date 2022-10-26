@@ -1,4 +1,5 @@
 from ..models import db, Governings
+from ..schemas import gbos_Schema
 import unicodedata
 
 base = db.session
@@ -26,3 +27,7 @@ class dbGovernings:
             except Exception as error:
                 print(error)
         return True
+
+
+    def setGovernings(self):
+        return gbos_Schema.jsonify(Governings.query.all())
