@@ -1,2 +1,2 @@
 from .schemaOfficials import schemaOrganigram, schemaOrganigrams
-from .schemaGovernings import schemaGorvernings, schemasGorvernings
+from .schemaGoverning import gbo_Schema, gbos_Schema

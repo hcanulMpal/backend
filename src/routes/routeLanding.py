@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Blueprint, current_app, request
 from flask_cors import CORS
 from ..controllers import OfficialsCtl, GoverningsCtl
@@ -8,16 +9,13 @@ cors = CORS(landing, resources={ r"/api/*":{"origins":"*"}})
 
 
 Offi = OfficialsCtl()
-Gobs = GoberningsCtl()
+Gover = GoverningsCtl()
 
-@landing.route("/api/landign/regidores", methods=['GET'])
+@landing.route("/api/landign/funcionarios", methods=['GET'])
 def setOfficials():
-    return Offi.setOfficials() 
+    return Offi.setOfficials()
 
 
-@landing.route("/api/landign/gobernadores", methods=['GET'])
-def setGobernings():
-    return Gobs.setGobernings() 
-
-
-
+@landing.route("/api/landing/regidores", methods=["GET"])
+def setGovernings():
+    return Gover.setGovernings()
