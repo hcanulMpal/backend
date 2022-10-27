@@ -1,5 +1,5 @@
 from ..models import db, Governings
-from ..schemas import gbos_Schema
+from ..schemas import schemaGorvernings, schemasGorvernings
 import unicodedata
 
 base = db.session
@@ -29,5 +29,5 @@ class dbGovernings:
         return True
 
 
-    def setGovernings(self):
-        return gbos_Schema.jsonify(Governings.query.all())
+    def setGoverningsOrganigram(self):
+        return schemasGorvernings.jsonify(Governings.query.all())
