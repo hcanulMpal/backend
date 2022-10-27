@@ -1,3 +1,4 @@
+from enum import unique
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import relationship
 import datetime
@@ -50,6 +51,7 @@ class Officials(db.Model):
     dependence = db.Column(db.String(100), nullable=False) #Dependencia del funcionario
     email = db.Column(db.String(100), nullable=False) #Direccion de contacto del funcionario
     status = db.Column(db.Boolean, nullable=False) #Si el funcionario esta activo
+    id_type = db.Column(db.Integer, db.ForeignKey('type.id', ondelete='SET NULL'), nullable=True)
     created_date = db.Column(db.DateTime, default=datetime.datetime.now)
     update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
 
@@ -65,3 +67,49 @@ class Governings(db.Model):
     email = db.Column(db.String(50), nullable=True) #Direccion de contacto del gobernante
     created_date = db.Column(db.DateTime, default=datetime.datetime.now)
     update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp()) 
+
+
+class Type(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
+    type = db.Column(db.Integer, nullable=False)
+    officials = db.relationship(
+        'Officials',
+        uselist=False,
+        backref='type',
+        lazy=True
+    )
+
+
+class Notices(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
+    title = db.Column(db.String(200), nullable=False)
+    text = db.Column(db.Text, nullable=False)
+    id_category = db.Column(db.Integer, db.ForeignKey('category.id', ondelete='SET NULL'), nullable=True)
+    id_author = db.Column(db.Integer, db.ForeignKey('author.id', ondelete='SET NULL'), nullable=True)
+    url_photo = db.Column(db.String(200), nullable=False)
+    created_date = db.Column(db.DateTime, default=datetime.datetime.now)
+    update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp()) 
+
+
+class Category(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
+    category = db.Column(db.String(100), nullable=False)
+    avisos = db.relationship(
+        'Notices',
+        uselist=False,
+        backref='category',
+        lazy=True
+    )
+
+
+class Author(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
+    name = db.Column(db.String(100), nullable=False)
+    mobile = db.Column(db.String(20), nullable=False)
+    email = db.Column(db.String(50), nullable=False, unique=True)
+    avisos = db.relationship(
+        'Notices',
+        uselist=False,
+        backref='author',
+        lazy=True
+    )
