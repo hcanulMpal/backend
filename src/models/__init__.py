@@ -1,4 +1,3 @@
-from enum import unique
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import relationship
 import datetime
@@ -71,9 +70,15 @@ class Governings(db.Model):
 
 class Type(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
-    type = db.Column(db.Integer, nullable=False)
+    type = db.Column(db.String(60), nullable=False)
     officials = db.relationship(
         'Officials',
+        uselist=False,
+        backref='type',
+        lazy=True
+    )
+    author = db.relationship(
+        'Author',
         uselist=False,
         backref='type',
         lazy=True
@@ -107,6 +112,7 @@ class Author(db.Model):
     name = db.Column(db.String(100), nullable=False)
     mobile = db.Column(db.String(20), nullable=False)
     email = db.Column(db.String(50), nullable=False, unique=True)
+    id_type = db.Column(db.Integer, db.ForeignKey('type.id', ondelete='SET NULL'), nullable=True)
     avisos = db.relationship(
         'Notices',
         uselist=False,
