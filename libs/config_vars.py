@@ -11,7 +11,7 @@ TEST_SECRET_KEY = secret_key_generator.generate(len_of_secret_key=50)
 SECRET_KEY = secret_key_generator.generate(len_of_secret_key=50)
 
 # DEVELOPMENT DATABASE SETTINGS
-DEV_DB_HOST = 'dbase'
+DEV_DB_HOST = 'localhost'
 DEV_DB_USER = 'root'
 DEV_DB_PASS = 'root'
 DEV_DB_NAME = 'municipio'
