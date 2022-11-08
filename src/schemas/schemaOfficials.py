@@ -7,7 +7,7 @@ ma = Marshmallow()
 #TODO: Declaración de Schema
 class Schema_Officials_Organigrama(ma.Schema):
     class Meta:
-        fields = ( 'id', 'id_officials', 'name', 'url_photo', 'dependence', 'email' )
+        fields = ( 'id', 'id_officials', 'name', 'url_photo', 'dependence', 'email', 'id_type' )
 
 
 

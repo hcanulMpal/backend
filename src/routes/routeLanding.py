@@ -13,7 +13,7 @@ Offi = OfficialsCtl()
 Gover = GoverningsCtl()
 Not = NoticesCtl()
 
-@landing.route("/api/landign/funcionarios", methods=['GET'])
+@landing.route("/api/landing/funcionarios", methods=['GET'])
 def setOfficials():
     return Offi.setOfficials()
 
