@@ -108,3 +108,8 @@ class Author(db.Model):
         backref='author',
         lazy=True
     )
+
+
+class Binary(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
+    photo = db.Column(db.BLOB, nullable=False)
