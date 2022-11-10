@@ -3,6 +3,7 @@ from .config import config
 import pymysql
 from src.models import db
 from src.controllers.validate import Valide
+from src.middlewares import verifyAndCreateData
 
 
 
@@ -16,12 +17,14 @@ def create_app(config_name='development'):
     with app.app_context():
         db.create_all()
 
+    verifyAndCreateData()
     Valide().valideTables()
 
     #TODO: importacion para asignar a los Blueprints
-    from src.routes import landing
+    from src.routes import landing, auth
 
      #TODO: Configuracion de los BluePrints
     app.register_blueprint(landing)
+    app.register_blueprint(auth)
     
     return app
