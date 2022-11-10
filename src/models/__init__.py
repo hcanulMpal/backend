@@ -24,6 +24,8 @@ class Role(db.Model):
     __tablename__ = 'role'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20), unique=True, nullable=False)
+    created_date = db.Column(db.DateTime, default=datetime.datetime.now)
+    update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp()) 
     user = db.relationship(
         'User',
         uselist=False,
@@ -71,6 +73,8 @@ class Governings(db.Model):
 class Type(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
     type = db.Column(db.String(60), nullable=False)
+    created_date = db.Column(db.DateTime, default=datetime.datetime.now)
+    update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp()) 
     
 
 
@@ -88,6 +92,8 @@ class Notices(db.Model):
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
     category = db.Column(db.String(100), nullable=False)
+    created_date = db.Column(db.DateTime, default=datetime.datetime.now)
+    update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp()) 
     avisos = db.relationship(
         'Notices',
         uselist=False,
@@ -102,6 +108,8 @@ class Author(db.Model):
     mobile = db.Column(db.String(20), nullable=False)
     email = db.Column(db.String(50), nullable=False, unique=True)
     id_type = db.Column(db.Integer, db.ForeignKey('type.id', ondelete='SET NULL'), nullable=True)
+    created_date = db.Column(db.DateTime, default=datetime.datetime.now)
+    update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp()) 
     avisos = db.relationship(
         'Notices',
         uselist=False,
@@ -110,6 +118,8 @@ class Author(db.Model):
     )
 
 
-class Binary(db.Model):
+class dbBinary(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
     photo = db.Column(db.BLOB, nullable=False)
+    created_date = db.Column(db.DateTime, default=datetime.datetime.now)
+    update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp()) 
