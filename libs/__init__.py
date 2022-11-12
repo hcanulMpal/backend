@@ -17,8 +17,9 @@ def create_app(config_name='development'):
     with app.app_context():
         db.create_all()
 
-    verifyAndCreateData()
     Valide().valideTables()
+    verifyAndCreateData()
+    
 
     #TODO: importacion para asignar a los Blueprints
     from src.routes import landing, auth

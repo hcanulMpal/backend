@@ -11,3 +11,6 @@ class fType():
             tipo = Type(type=i)
             base.add(tipo)
             base.commit()
+
+    def findAuthorType(self, type):
+        return Type.query.filter_by(type=type).first().id
