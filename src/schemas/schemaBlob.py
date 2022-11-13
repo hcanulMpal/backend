@@ -3,7 +3,13 @@ from flask_marshmallow import Marshmallow
 
 ma = Marshmallow()
 
+
 #TODO Declaracion de Schema
-class Schema_Officials_Organigrama(ma.Schema):
+class SchemaBlob(ma.Schema):
     class Meta:
-        fields = ( '' )
+        field = ( 'photo' )
+
+
+#TODO: Instancia de Clases de schemas Blob
+Bl_Schema = SchemaBlob()
+Bls_Schema = SchemaBlob(many=True)

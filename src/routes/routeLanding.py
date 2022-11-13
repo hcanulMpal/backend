@@ -6,6 +6,7 @@ from ..controllers.prensaControllers import PrensaCtl
 from ..controllers.AuthorController import AuthorCtl
 from ..controllers.CategoryController import CategoryCtl
 
+from ..controllers.blobController import BlobCtl
 
 
 landing = Blueprint('admini', __name__)
@@ -14,11 +15,11 @@ cors = CORS(landing, resources={ r"/api/*":{"origins":"*"}})
 
 Offi = OfficialsCtl()
 Gover = GoverningsCtl()
-Not = NoticesCtl()
-Pre = PrensaCtl
-Au = AuthorCtl
-Ca = CategoryCtl
-
+Pre = PrensaCtl()
+Au = AuthorCtl()
+Ca = CategoryCtl()
+Noti = NoticesCtl()
+Blobe = BlobCtl()
 
 @landing.route("/api/landing/funcionarios", methods=['GET'])
 def setOfficials():
@@ -32,7 +33,7 @@ def setGovernings():
 
 @landing.route("/api/landing/notices", methods=["GET"])
 def setNotices():
-    return Not.setNotices()
+    return Noti.setNotices()
 
 @landing.route("/api/landing/prensa", methods=["GET"])
 def setPrensa():
@@ -47,4 +48,8 @@ def setCategory():
     return Ca.setCategory()
 
 
-
+@landing.route("/api/landing/blob/image", methods=["POST"])
+def setBlob():
+    return Blobe.setBlob(request.file['file'])
+    
+    

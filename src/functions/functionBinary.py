@@ -1,4 +1,5 @@
 from ..models import db, dbBinary
+from ..schemas.schemaBlob import Bl_Schema
 
 base = db.session
 
@@ -11,13 +12,13 @@ class Bloby():
         return binaryData
 
 
-    def insertBLOB(self, filename):
+    def insertBLOB(self, archivo):
         print("Insertar BLOB en la tabla binary")
 
         try:
 
             #Convertimos el archivo a formato binario
-            binPhoto=self.convertToBinaryData(filename)
+            binPhoto = archivo
 
             dbBinary = dbBinary(
                 potho = binPhoto
@@ -26,5 +27,9 @@ class Bloby():
             base.commit()
         except Exception as error:
             print(error)
+
+
+    def setBlob(self):
+        return Bl_Schema.jsonify()
 
 

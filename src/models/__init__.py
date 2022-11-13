@@ -75,7 +75,12 @@ class Type(db.Model):
     type = db.Column(db.String(60), nullable=False)
     created_date = db.Column(db.DateTime, default=datetime.datetime.now)
     update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp()) 
-    
+    author = db.relationship(
+        'Author',
+        uselist=False,
+        backref='type',
+        lazy=True
+    )
 
 
 class Notices(db.Model):
@@ -94,7 +99,7 @@ class Category(db.Model):
     category = db.Column(db.String(100), nullable=False)
     created_date = db.Column(db.DateTime, default=datetime.datetime.now)
     update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp()) 
-    avisos = db.relationship(
+    notices = db.relationship(
         'Notices',
         uselist=False,
         backref='category',
@@ -110,7 +115,7 @@ class Author(db.Model):
     id_type = db.Column(db.Integer, db.ForeignKey('type.id', ondelete='SET NULL'), nullable=True)
     created_date = db.Column(db.DateTime, default=datetime.datetime.now)
     update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp()) 
-    avisos = db.relationship(
+    notices = db.relationship(
         'Notices',
         uselist=False,
         backref='author',
