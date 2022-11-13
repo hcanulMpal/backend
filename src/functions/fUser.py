@@ -23,6 +23,7 @@ class functionUser:
         "role_id": 'Administrador',
     }
 
+   #SI EL USUARIO ADMIN NO EXISTE LO CREA
     def is_Data(self):
         if not User.query.all():
             self.saveUser(self.admin)
