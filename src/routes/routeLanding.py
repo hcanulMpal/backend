@@ -10,12 +10,9 @@ cors = CORS(landing, resources={ r"/api/*":{"origins":"*"}})
 
 
 Offi = OfficialsCtl()
-<<<<<<< HEAD
 Gobs = GoverningsCtl()
-=======
 Gover = GoverningsCtl()
 Noti = NoticesCtl()
->>>>>>> main
 Blobe = BlobCtl()
 
 @landing.route("/api/landing/funcionarios", methods=['GET'])
@@ -29,8 +26,6 @@ def setGobernings():
 
 
 
-<<<<<<< HEAD
-=======
 @landing.route("/api/landing/regidores", methods=["GET"])
 def setGovernings():
     return Gover.setGovernings()
@@ -39,8 +34,6 @@ def setGovernings():
 @landing.route("/api/landing/notices", methods=["GET"])
 def setNotices():
     return Noti.setNotices()
->>>>>>> main
-
 
 
 @landing.route("/api/landing/blob/image", methods=["POST"])
