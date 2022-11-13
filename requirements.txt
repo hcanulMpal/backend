@@ -9,3 +9,4 @@ flask-marshmallow
 marshmallow
 marshmallow-sqlalchemy
 urllib3
+flask_jwt_extended
