@@ -1,7 +1,14 @@
 from ..models import db, Author, Type
 from .governingsType import fType
+from ..schemas.schemaAuthor import schemaAu, schemaAus
 
 base = db.session
+
+class dbAuthor:
+
+    def setAuthor(self):
+        return schemaAus.jsonify(Author.query.all())
+        
 
 class fAuth:
 

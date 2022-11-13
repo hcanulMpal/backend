@@ -1,6 +1,13 @@
-from ..models import db, Category
+from ..models import Category, db
+from ..schemas.schemaCategory import schemaCa, schemaCau
 
 base = db.session
+
+class dbCategory:
+
+    def setCategory(self):
+        return schemaCau.jsonify(Category.query.all())
+
 
 class funcCat:
     
