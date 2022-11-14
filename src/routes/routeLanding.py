@@ -1,12 +1,12 @@
-from flask import Blueprint, current_app, request
+from flask import Blueprint, current_app, request, Flask, render_template
 from flask_cors import CORS
 from ..controllers import OfficialsCtl, GoverningsCtl
 from ..controllers.noticesControllers import NoticesCtl
 from ..controllers.prensaControllers import PrensaCtl
 from ..controllers.AuthorController import AuthorCtl
 from ..controllers.CategoryController import CategoryCtl
-
 from ..controllers.blobController import BlobCtl
+from ..controllers.upFileController import upFile
 
 
 landing = Blueprint('admini', __name__)
@@ -20,6 +20,7 @@ Au = AuthorCtl()
 Ca = CategoryCtl()
 Noti = NoticesCtl()
 Blobe = BlobCtl()
+Uf = upFile()
 
 @landing.route("/api/landing/funcionarios", methods=['GET'])
 def setOfficials():
@@ -53,4 +54,6 @@ def setBlob():
     return Blobe.setBlob(request.file['file'])
     
     
-    
+@landing.route("/upload", methods=['POST'])
+def upFile():
+    Uf.uploadFile()

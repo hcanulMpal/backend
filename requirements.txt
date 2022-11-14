@@ -10,3 +10,5 @@ marshmallow
 marshmallow-sqlalchemy
 urllib3
 flask_jwt_extended
+cloudinary
+python-dotenv

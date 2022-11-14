@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, relationships
 import datetime
 
 db = SQLAlchemy()
@@ -123,8 +123,86 @@ class Author(db.Model):
     )
 
 
-class dbBinary(db.Model):
+class Binary(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
     photo = db.Column(db.BLOB, nullable=False)
     created_date = db.Column(db.DateTime, default=datetime.datetime.now)
     update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp()) 
+
+
+class Imagen(db.Model):
+    __tablename__ = 'imagen'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
+    url_photo = db.Column(db.String(200), nullable=False)
+    imgCategory_id = db.Column(db.Integer, db.ForeignKey('imgcategory.id', ondelete='SET NULL'), nullable=True)
+    description = db.Column(db.String(90), nullable=False)
+    created_date = db.Column(db.DateTime, default=datetime.datetime.now)
+    update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp()) 
+
+
+class ImgCategory(db.Model):
+    __tablename__ = 'imgcategory'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
+    categorys = db.Column(db.String(200), nullable=False)
+    created_date = db.Column(db.DateTime, default=datetime.datetime.now)
+    update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
+    imagen = db.relationship(
+        'Imagen',
+        uselist=False,
+        backref='imgcategory',
+        lazy=True
+    )
+
+
+class Requirements(db.Model):
+    __tablename__ = 'requirements'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
+    requirement = db.Column(db.String(100), nullable=False)
+    tramit_id = db.Column(db.Integer, db.ForeignKey('tramits.id', ondelete='SET NULL'), nullable=False)
+    dependence_id = db.Column(db.Integer, db.ForeignKey('dependence.id', ondelete='SET NULL'), nullable=False)
+    created_date = db.Column(db.DateTime, default=datetime.datetime.now)
+    update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
+
+
+class Tramits(db.Model):
+    __tablename__ = 'tramits'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
+    tramit = db.Column(db.String(100), nullable=False)
+    dependence_id = db.Column(db.Integer, db.ForeignKey('dependence.id', ondelete='SET NULL'), nullable=False)
+    created_date = db.Column(db.DateTime, default=datetime.datetime.now)
+    update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
+    requirements = db.relationship(
+        'Requirements',
+        uselist=False,
+        backref='tramits',
+        lazy=True
+    )
+    
+
+class Dependence(db.Model):
+    __tablename__ = 'dependence'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
+    dependence = db.Column(db.String(100), nullable=False)
+    schedules = db.Column(db.String(13), nullable=False)
+    created_date = db.Column(db.DateTime, default=datetime.datetime.now)
+    update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
+    tramits = db.relationship(
+        'Tramits',
+        uselist=False,
+        backref='dependence',
+        lazy=True
+    )
+    requirements = db.relationship(
+        'Requirements',
+        uselist=False,
+        backref='dependence',
+        lazy=True
+    )
+
+
+
+
+
+
+
+

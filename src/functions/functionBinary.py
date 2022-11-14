@@ -1,4 +1,4 @@
-from ..models import db, dbBinary
+from ..models import db, Binary
 from ..schemas.schemaBlob import Bl_Schema
 
 base = db.session
@@ -20,7 +20,7 @@ class Bloby():
             #Convertimos el archivo a formato binario
             binPhoto = archivo
 
-            dbBinary = dbBinary(
+            dbBinary = Binary(
                 potho = binPhoto
             )
             base.add(dbBinary)
