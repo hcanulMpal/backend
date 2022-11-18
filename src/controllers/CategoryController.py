@@ -5,5 +5,5 @@ Category = dbCategory()
 
 class CategoryCtl:
     
-    def setCategory():
+    def setCategory(self):
         return Category.setCategory()

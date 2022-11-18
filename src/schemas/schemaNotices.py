@@ -7,7 +7,7 @@ ma = Marshmallow()
 #TODO: Declaracion de Schema
 class Schema_Notices_Organigrama(ma.Schema):
     class Meta:
-        fields = ( 'id', 'title', 'text', 'id_category', 'id_author', 'url_photo', 'created_date', 'update_on' )
+        fields = ('id_category', 'id_author', )
 
 
 #TODO: Instancia de los distintos Schemas
