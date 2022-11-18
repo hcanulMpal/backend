@@ -1,7 +1,7 @@
-from flask import jsonify
-from ..functions import Avisos_list
+#from flask import jsonify
+#from ..functions import Avisos_list
 
-class listAvisos:
+#class listAvisos:
     
-    def listA(self):
-        return Avisos_list.listAvisos(self), 200
+ #   def listA(self):
+  #      return Avisos_list.listAvisos(self), 200

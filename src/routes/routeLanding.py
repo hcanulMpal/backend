@@ -2,7 +2,7 @@ from flask import Blueprint, current_app, request
 from flask_cors import CORS
 from ..controllers import OfficialsCtl, GoverningsCtl
 from ..controllers.noticesControllers import NoticesCtl
-from ..controllers.prensaControllers import PrensaCtl
+#from ..controllers.prensaControllers import PrensaCtl
 from ..controllers.AuthorController import AuthorCtl
 from ..controllers.CategoryController import CategoryCtl
 from ..controllers.blobController import BlobCtl
@@ -14,7 +14,7 @@ cors = CORS(landing, resources={ r"/api/*":{"origins":"*"}})
 
 Offi = OfficialsCtl()
 Gover = GoverningsCtl()
-Pre = PrensaCtl
+#Pre = PrensaCtl
 Au = AuthorCtl()
 Ca = CategoryCtl()
 Noti = NoticesCtl()

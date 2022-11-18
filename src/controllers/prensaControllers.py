@@ -1,10 +1,10 @@
-from ..functions.fPrensa import dbPrensa
-import requests
+#from ..functions.fPrensa import dbPrensa
+#import requests
 
-Prensa = dbPrensa()
+#Prensa = dbPrensa()
 
 
-class PrensaCtl:
+#class PrensaCtl:
 
-    def setPrensa():
-        return Prensa.setPrensa()
+ #   def setPrensa():
+  #      return Prensa.setPrensa()
