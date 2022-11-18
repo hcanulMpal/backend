@@ -5,30 +5,21 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
-
 class upFile():
 
-    def uploadFile(self):
-
-        app = Flask(__name__)
-        app.logger.info('in upload route')
+    def uploadFile(self, data):
+        print('llego aqui')
 
         load_dotenv()
 
-        cloud_name = "municipio-de-felipe-carrillo-puerto" 
-        api_key = "939831556648318" 
-        api_secret = "gpzkhczuJXhtXWv7ozmIBSzTLiQ" 
+        cloudinary.config(cloud_name = 'municipio-de-felipe-carrillo-puerto', api_key='939831556648318', api_secret= 'gpzkhczuJXhtXWv7ozmIBSzTLiQ')
+        upload_result = None
 
-        cloudinary.config(cloud_name = cloud_name, apy_key = api_key, api_secret = api_secret)
-
-
-        if request.method == 'POST':
-            fileToUpload = request.files['file']
-            app.logger.info('% filoToUpload', fileToUpload)
-            if fileToUpload:
-                upload_result = cloudinary.uploader.upload(fileToUpload)
-                app.logger.info(upload_result)
-                return jsonify(upload_result)
+        fileToUpload = data
+        if fileToUpload:
+            upload_result = cloudinary.uploader.upload(fileToUpload)
+            print(upload_result)
+            return jsonify(upload_result)
 
         
 

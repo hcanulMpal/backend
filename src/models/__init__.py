@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import relationship, relationships
+from sqlalchemy.orm import relationship
 import datetime
 
 db = SQLAlchemy()
@@ -158,8 +158,8 @@ class Requirements(db.Model):
     __tablename__ = 'requirements'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
     requirement = db.Column(db.String(100), nullable=False)
-    tramit_id = db.Column(db.Integer, db.ForeignKey('tramits.id', ondelete='SET NULL'), nullable=False)
-    dependence_id = db.Column(db.Integer, db.ForeignKey('dependence.id', ondelete='SET NULL'), nullable=False)
+    tramits_id = db.Column(db.Integer, db.ForeignKey('tramits.id', ondelete='SET NULL'), nullable=True)
+    dependences_id = db.Column(db.Integer, db.ForeignKey('dependences.id', ondelete='SET NULL'), nullable=True)
     created_date = db.Column(db.DateTime, default=datetime.datetime.now)
     update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
 
@@ -168,19 +168,19 @@ class Tramits(db.Model):
     __tablename__ = 'tramits'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
     tramit = db.Column(db.String(100), nullable=False)
-    dependence_id = db.Column(db.Integer, db.ForeignKey('dependence.id', ondelete='SET NULL'), nullable=False)
+    dependences_id = db.Column(db.Integer, db.ForeignKey('dependences.id', ondelete='SET NULL'), nullable=True)
     created_date = db.Column(db.DateTime, default=datetime.datetime.now)
     update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
     requirements = db.relationship(
         'Requirements',
         uselist=False,
-        backref='tramits',
+        backref='Tramits',
         lazy=True
     )
     
 
-class Dependence(db.Model):
-    __tablename__ = 'dependence'
+class Dependences(db.Model):
+    __tablename__ = 'dependences'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
     dependence = db.Column(db.String(100), nullable=False)
     schedules = db.Column(db.String(13), nullable=False)
@@ -189,13 +189,13 @@ class Dependence(db.Model):
     tramits = db.relationship(
         'Tramits',
         uselist=False,
-        backref='dependence',
+        backref='Dependences',
         lazy=True
     )
     requirements = db.relationship(
         'Requirements',
         uselist=False,
-        backref='dependence',
+        backref='Dependence',
         lazy=True
     )
 

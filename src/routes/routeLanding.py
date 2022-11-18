@@ -54,6 +54,6 @@ def setBlob():
     return Blobe.setBlob(request.file['file'])
     
     
-@landing.route("/upload", methods=['POST'])
+@landing.route("/api/upload", methods=['POST'])
 def upFile():
-    Uf.uploadFile()
+    return Uf.uploadFile(request.files['file'])
