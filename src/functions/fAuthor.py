@@ -4,6 +4,7 @@ from ..schemas.schemaAuthor import schemaAu, schemaAus
 
 base = db.session
 
+
 class dbAuthor:
 
     def setAuthor(self):

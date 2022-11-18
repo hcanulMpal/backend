@@ -2,7 +2,7 @@ from flask import Blueprint, current_app, request, Flask, render_template
 from flask_cors import CORS
 from ..controllers import OfficialsCtl, GoverningsCtl
 from ..controllers.noticesControllers import NoticesCtl
-from ..controllers.prensaControllers import PrensaCtl
+#from ..controllers.prensaControllers import PrensaCtl
 from ..controllers.AuthorController import AuthorCtl
 from ..controllers.CategoryController import CategoryCtl
 from ..controllers.blobController import BlobCtl
@@ -15,12 +15,15 @@ cors = CORS(landing, resources={ r"/api/*":{"origins":"*"}})
 
 Offi = OfficialsCtl()
 Gobs = GoverningsCtl()
-Pre = PrensaCtl()
+#Pre = PrensaCtl()
+Gover = GoverningsCtl()
+#Pre = PrensaCtl
 Au = AuthorCtl()
 Ca = CategoryCtl()
 Noti = NoticesCtl()
 Blobe = BlobCtl()
 Uf = upFile()
+
 
 @landing.route("/api/landing/funcionarios", methods=['GET'])
 def setOfficials():
@@ -47,7 +50,6 @@ def setAuthor():
 @landing.route("/api/landing/category", methods=["GET"])
 def setCategory():
     return Ca.setCategory()
-
 
 @landing.route("/api/landing/blob/image", methods=["POST"])
 def setBlob():

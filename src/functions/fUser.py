@@ -13,20 +13,41 @@ base = db.session
 
 class functionUser:
 
-    admin = {
-        "user_name": 'hcanul',
-        "first_name":"Hugo Paulino",
-        "last_name":"Canul Echazarreta",
-        "email":"cyber.frenetic@gmail.com",
-        "mobile":"(562) 114 3235",
-        "password": "ha260182ha",
-        "role_id": 'Administrador',
-    }
+    admin = [
+        {
+            "user_name": "hcanul",
+            "first_name":"Hugo Paulino",
+            "last_name":"Canul Echazarreta",
+            "email":"cyber.frenetic@gmail.com",
+            "mobile":"(562) 114 3235",
+            "password": "ha260182ha",
+            "role_id": 'SuperAdmin',
+        },
+        {
+            "user_name": 'shais',
+            "first_name":"Alma Sarai",
+            "last_name":"Canche Chan",
+            "email":"sarai.1010.oct@gmail.com",
+            "mobile":"983 202 1647",
+            "password": "S4r41",
+            "role_id": 'User',
+        }, 
+        {
+            "user_name": 'capitancp',
+            "first_name":"Alex Jhovani",
+            "last_name":"Velasquez Chi",
+            "email":"Velazquezchialex@gmail.com",
+            "mobile":"983 116 2738",
+            "password": "juegogenshinXD",
+            "role_id": 'Administrador',
+        }
+    ]
 
    #SI EL USUARIO ADMIN NO EXISTE LO CREA
     def is_Data(self):
         if not User.query.all():
-            self.saveUser(self.admin)
+            for item in self.admin:
+                self.saveUser(item)
 
     
     def findUserByUserName(self, user):

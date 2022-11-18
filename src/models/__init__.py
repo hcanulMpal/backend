@@ -90,6 +90,7 @@ class Notices(db.Model):
     id_category = db.Column(db.Integer, db.ForeignKey('category.id', ondelete='SET NULL'), nullable=True)
     id_author = db.Column(db.Integer, db.ForeignKey('author.id', ondelete='SET NULL'), nullable=True)
     url_photo = db.Column(db.String(200), nullable=False)
+    aprob = db.Column(db.Boolean, nullable = True, default = False)
     created_date = db.Column(db.DateTime, default=datetime.datetime.now)
     update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp()) 
 

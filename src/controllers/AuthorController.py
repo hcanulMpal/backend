@@ -5,5 +5,5 @@ Author = dbAuthor()
 
 class AuthorCtl:
     
-    def setAuthor():
+    def setAuthor(self):
         return Author.setAuthor()
