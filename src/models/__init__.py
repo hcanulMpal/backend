@@ -184,7 +184,7 @@ class Dependences(db.Model):
     __tablename__ = 'dependences'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
     dependence = db.Column(db.String(100), nullable=False)
-    schedules = db.Column(db.String(13), nullable=False)
+    schedules = db.Column(db.String(100), nullable=False)
     created_date = db.Column(db.DateTime, default=datetime.datetime.now)
     update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
     tramits = db.relationship(
