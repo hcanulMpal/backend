@@ -1,4 +1,3 @@
-from flask import jsonify
 from ..functions import Avisos_list
 
 class listAvisos:

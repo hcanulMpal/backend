@@ -45,3 +45,4 @@ class dbDependence:
 
     def finDependence(self, data):
         return Dependences.query.filter_by(dependence=data).first().id
+
