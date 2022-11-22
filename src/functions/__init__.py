@@ -6,3 +6,5 @@ from .fUser import functionUser
 from .fRoles import functionRole
 from .listaPrensa import Avisos_list
 from ..controllers import controlPrensa
+from .fImagen import ImagesList
+from .fDependence import listDependencef
