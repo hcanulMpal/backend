@@ -6,5 +6,13 @@ from .fUser import functionUser
 from .fRoles import functionRole
 from .listaPrensa import Avisos_list
 from ..controllers import controlPrensa
+from .fCategory import funcCat
+from .fAuthor import fAuth
+from .functionNotices import dbNotices
+from .fImageCategory import dbImgCat
+from .fImage import dbImage
+from .fDependence import dbDependence
+from .fTramits import dbTramits
+from .fRequirements import dbRequirements
 from .fImagen import ImagesList
-from .fDependence import listDependencef
+from .fDepndenceschema import listDependencef

@@ -1,23 +1,36 @@
-from flask import jsonify
-from ..models import db, Dependences, Tramits, Requirements
-from ..schemas import schemaTramit,schemaDependences,schemaRequire
+from ..models import db, Dependences
 
 base = db.session
 
-class listDependencef:
+class dbDependence:
 
-    def listDepen(self):
-        Dp = base.query(Dependences, Tramits, Requirements).filter(Requirements.dependences_id == Dependences.id).filter(Requirements.tramits_id == Tramits.id).filter(Requirements ==True).all()
-        Dpc = []
+    dep = [{ 
+        "dependence": 'Palacio',
+        "schedules": 'Lunes a viernes (6:00 p.m a 9:a.m)'
+    },
+    { 
+        "dependence": 'Viejo palacio',
+        "schedules": 'Lunes a viernes (9:00 a.m a 1:p.m)'
+    },
+    { 
+        "dependence": 'Nuevo Palacio',
+        "schedules": 'Lunes a viernes (1:00 p.m a 6:p.m)'
+    }]
 
-        for item in Dp:
-            Dpc.append([schemaRequire.dump(item[0]),
-                       schemaTramit.dump(item[2]),
-                       schemaDependences.dump(item[1])])
+    def is_Data(self):
+        if not Dependences.query.all():
+            for item in self.dep:
+                self.saveDapendence(item)
 
-       
 
-        try:
-             return jsonify({"data": Dpc})
-        except Exception as error:
-            return jsonify({"error":str(error)}), 500
+    def saveDapendence(self, data):
+        dep = Dependences(
+            dependence = data['dependence'],
+            schedules = data['schedules']
+        )
+        base.add(dep)
+        base.commit()
+
+    def finDependence(self, data):
+        return Dependences.query.filter_by(dependence=data).first().id
+
