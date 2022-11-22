@@ -7,7 +7,7 @@ base = db.session
 class ImagesList:
 
     def listImages(self):
-        IM = base.query(Imagen).filter(Imagen.imgCategory_id == ImgCategory.id).filter(Imagen == True).all()
+        IM = base.query(Imagen, ImgCategory).filter(Imagen.imgCategory_id == ImgCategory.id).all()
         Ims = []
 
         for item in IM:

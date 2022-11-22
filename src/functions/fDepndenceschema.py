@@ -7,7 +7,7 @@ base = db.session
 class listDependencef:
 
     def listDepen(self):
-        Dp = base.query(Dependences, Tramits, Requirements).filter(Requirements.dependences_id == Dependences.id).filter(Requirements.tramits_id == Tramits.id).filter(Requirements ==True).all()
+        Dp = base.query(Dependences, Tramits, Requirements).filter(Requirements.dependences_id == Dependences.id).filter(Requirements.tramits_id == Tramits.id).all()
         Dpc = []
 
         for item in Dp:
