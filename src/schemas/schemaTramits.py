@@ -5,7 +5,7 @@ ma = Marshmallow()
 
 class schema_Tramits(ma.Schema):
     class Meta:
-        fields = ('id','dependece')
+        fields = ('id','tramit')
 
 schemaTrami = schema_Tramits()
 schemaTramit = schema_Tramits(many=True)

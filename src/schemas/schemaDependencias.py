@@ -5,7 +5,7 @@ ma = Marshmallow()
 
 class schema_Dependence(ma.Schema):
     class Meta:
-        fields = ('id','dependece')
+        fields = ('id','dependence','schedules')
 
 schemaDependence = schema_Dependence()
 schemaDependences = schema_Dependence(many=True)

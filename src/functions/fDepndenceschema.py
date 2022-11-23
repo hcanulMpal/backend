@@ -1,6 +1,6 @@
 from flask import jsonify
 from ..models import db, Dependences, Tramits, Requirements
-from ..schemas import schemaTramit,schemaDependences,schemaRequire
+from ..schemas import schemaTrami,schemaDependence,schemaRequi
 
 base = db.session
 
@@ -11,9 +11,9 @@ class listDependencef:
         Dpc = []
 
         for item in Dp:
-            Dpc.append([schemaRequire.dump(item[0]),
-                       schemaTramit.dump(item[2]),
-                       schemaDependences.dump(item[1])])
+            Dpc.append([schemaRequi.dump(item[2]),
+                       schemaTrami.dump(item[1]),
+                       schemaDependence.dump(item[0])])
 
        
 

@@ -5,7 +5,7 @@ ma = Marshmallow()
 
 class schema_Requirements(ma.Schema):
     class Meta:
-        fields = ('','','','')
+        fields = ('id','requirement')
 
 schemaRequi = schema_Requirements()
 schemaRequire = schema_Requirements(many=True)
