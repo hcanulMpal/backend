@@ -6,15 +6,24 @@ class dbDependence:
 
     dep = [{ 
         "dependence": 'Palacio',
-        "schedules": 'Lunes a viernes (6:00 p.m a 9:a.m)'
+        "dia_inicial": 'Lunes',
+        "dia_final": 'Sabado',
+        "hora_inicial": '3:30 p.m',
+        "hora_final": '9:30 p.m',
     },
     { 
         "dependence": 'Viejo palacio',
-        "schedules": 'Lunes a viernes (9:00 a.m a 1:p.m)'
+        "dia_inicial": 'Lunes',
+        "dia_final": 'Sabado',
+        "hora_inicial": '9:30 p.m',
+        "hora_final": '5:30 a.m',
     },
     { 
         "dependence": 'Nuevo Palacio',
-        "schedules": 'Lunes a viernes (1:00 p.m a 6:p.m)'
+        "dia_inicial": 'Lunes',
+        "dia_final": 'Sabado',
+        "hora_inicial": '5:30 a.m',
+        "hora_final": '3:30 p.m',
     }]
 
     def is_Data(self):
@@ -26,7 +35,10 @@ class dbDependence:
     def saveDapendence(self, data):
         dep = Dependences(
             dependence = data['dependence'],
-            schedules = data['schedules']
+            dia_inicial = data['dia_inicial'],
+            dia_final = data['dia_final'],
+            hora_inicial = data['hora_inicial'],
+            hora_final = data['hora_final'],
         )
         base.add(dep)
         base.commit()
