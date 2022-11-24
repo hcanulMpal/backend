@@ -189,8 +189,8 @@ class Dependences(db.Model):
     dia_final = db.Column(db.String(10), nullable=False)
     hora_inicial = db.Column(db.String(10), nullable=False)
     hora_final = db.Column(db.String(10), nullable=False)
-    ubi_lat = db.Column(db.Float, nullable=False)
-    ubi_long = db.Column(db.Float, nullable=False)
+    lat = db.Column(db.String(20), nullable=False)
+    long = db.Column(db.String(20), nullable=False)
     created_date = db.Column(db.DateTime, default=datetime.datetime.now)
     update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
     tramits = db.relationship(
