@@ -10,8 +10,8 @@ class dbDependence:
         "dia_final": 'Viernes',
         "hora_inicial": '8:00 a.m',
         "hora_final": '3:00 p.m',
-        "ubi_lat": '123.456',
-        "ubi_long": '123.456',
+        "lat": '123.45698989898',
+        "long": '123.45698989899',
     },
     { 
         "dependence": 'DIRECCION DE TURISMO MUNICIPAL',
@@ -19,8 +19,8 @@ class dbDependence:
         "dia_final": 'Viernes',
         "hora_inicial": '8:00 a.m',
         "hora_final": '3:00 p.m',
-        "ubi_lat": '123.456',
-        "ubi_long": '123.456',
+        "lat": '123.456192873',
+        "long": '123.456918273',
     },
     { 
         "dependence": 'DIRECCION DE CULTURA Y RECREACION MUNICIPAL',
@@ -28,8 +28,8 @@ class dbDependence:
         "dia_final": 'Viernes',
         "hora_inicial": '8:00 a.m',
         "hora_final": '3:00 p.m',
-        "ubi_lat": '123.456',
-        "ubi_long": '123.456',
+        "lat": '123.4561987389',
+        "long": '123.4561928371',
     }]
 
     def is_Data(self):
@@ -45,8 +45,8 @@ class dbDependence:
             dia_final = data['dia_final'],
             hora_inicial = data['hora_inicial'],
             hora_final = data['hora_final'],
-            ubi_lat = data['ubi_lat'],
-            ubi_long = data['ubi_long']
+            lat = data['lat'],
+            long = data['long']
         )
         base.add(dep)
         base.commit()
