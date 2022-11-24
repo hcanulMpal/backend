@@ -1,9 +1,9 @@
 from flask import current_app, send_file
 import os
 
-class Mapa:
+class Mapa():
 
     def mapa(self):
-        path = current_app.config('STATIC_FOLDER_PDF')
+        path = current_app.config['STATIC_FOLDER_PDF']
         pdfs = os.path.join(path, 'mapaTuristico.pdf')
-        return send_file(pdfs, download_name= "mapaTuristico.pdf", as_attachment =True), 200
+        return send_file(pdfs, download_name= "mapaTuristico.pdf", as_attachment=True)
