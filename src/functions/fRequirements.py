@@ -9,64 +9,14 @@ base = db.session
 class dbRequirements:
 
     req = [{
-        "requirement": 'requirement 1',
-        "tramits_id": 'Pago 1',
-        "dependences_id": 'Palacio'
+        "requirement": '1',
+        "tramits_id": 'Trabajos de investigacion social',
+        "dependences_id": 'DIF MUNICIPAL'
     },
     {
-        "requirement": 'requirement 2',
-        "tramits_id": 'Pago 1',
-        "dependences_id": 'Palacio'
-    },
-    {
-        "requirement": 'requirement 3',
-        "tramits_id": 'Pago 2',
-        "dependences_id": 'Palacio'
-    },
-    {
-        "requirement": 'requirement 4',
-        "tramits_id": 'Pago 2',
-        "dependences_id": 'Palacio'
-    },
-    {
-        "requirement": 'requirement 5',
-        "tramits_id": 'Pago 3',
-        "dependences_id": 'Viejo palacio'
-    },
-    {
-        "requirement": 'requirement 6',
-        "tramits_id": 'Pago 3',
-        "dependences_id": 'Viejo palacio'
-    },
-    {
-        "requirement": 'requirement 7',
-        "tramits_id": 'Pago 4',
-        "dependences_id": 'Viejo palacio'
-    },
-    {
-        "requirement": 'requirement 8',
-        "tramits_id": 'Pago 4',
-        "dependences_id": 'Viejo palacio'
-    },
-    {
-        "requirement": 'requirement 9',
-        "tramits_id": 'Pago 5',
-        "dependences_id": 'Nuevo Palacio'
-    },
-    {
-        "requirement": 'requirement 10',
-        "tramits_id": 'Pago 5',
-        "dependences_id": 'Nuevo Palacio'
-    },
-    {
-        "requirement": 'requirement 11',
-        "tramits_id": 'Pago 6',
-        "dependences_id": 'Nuevo Palacio'
-    },
-    {
-        "requirement": 'requirement 12',
-        "tramits_id": 'Pago 6',
-        "dependences_id": 'Nuevo Palacio'
+        "requirement": 'Requirement 2',
+        "tramits_id": 'Trabajos de investigacion social',
+        "dependences_id": 'DIF MUNICIPAL'
     }]
     
 
