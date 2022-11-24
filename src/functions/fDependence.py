@@ -5,25 +5,31 @@ base = db.session
 class dbDependence:
 
     dep = [{ 
-        "dependence": 'Palacio',
+        "dependence": 'DIF MUNICIPAL',
         "dia_inicial": 'Lunes',
-        "dia_final": 'Sabado',
-        "hora_inicial": '3:30 p.m',
-        "hora_final": '9:30 p.m',
+        "dia_final": 'Viernes',
+        "hora_inicial": '8:00 a.m',
+        "hora_final": '3:00 p.m',
+        "ubi_lat": '123.456',
+        "ubi_long": '123.456',
     },
     { 
-        "dependence": 'Viejo palacio',
+        "dependence": 'DIRECCION DE TURISMO MUNICIPAL',
         "dia_inicial": 'Lunes',
-        "dia_final": 'Sabado',
-        "hora_inicial": '9:30 p.m',
-        "hora_final": '5:30 a.m',
+        "dia_final": 'Viernes',
+        "hora_inicial": '8:00 a.m',
+        "hora_final": '3:00 p.m',
+        "ubi_lat": '123.456',
+        "ubi_long": '123.456',
     },
     { 
-        "dependence": 'Nuevo Palacio',
+        "dependence": 'DIRECCION DE CULTURA Y RECREACION MUNICIPAL',
         "dia_inicial": 'Lunes',
-        "dia_final": 'Sabado',
-        "hora_inicial": '5:30 a.m',
-        "hora_final": '3:30 p.m',
+        "dia_final": 'Viernes',
+        "hora_inicial": '8:00 a.m',
+        "hora_final": '3:00 p.m',
+        "ubi_lat": '123.456',
+        "ubi_long": '123.456',
     }]
 
     def is_Data(self):
@@ -39,6 +45,8 @@ class dbDependence:
             dia_final = data['dia_final'],
             hora_inicial = data['hora_inicial'],
             hora_final = data['hora_final'],
+            ubi_lat = data['ubi_lat'],
+            ubi_long = data['ubi_long']
         )
         base.add(dep)
         base.commit()

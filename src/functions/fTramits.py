@@ -6,28 +6,52 @@ base = db.session
 class dbTramits:
 
     tra = [{
-        "tramit": 'Pago 1',
-        "dependences_id": 'Palacio'
+        "tramit": 'Gestion para apoyos funcionales, estudios medicos de especialidad y articulos de primera nesecidad',
+        "dependences_id": 'DIF MUNICIPAL'
     },
     {
-        "tramit": 'Pago 2',
-        "dependences_id": 'Palacio'
+        "tramit": 'Trabajos de investigacion social',
+        "dependences_id": 'DIF MUNICIPAL'
     },
     {
-        "tramit": 'Pago 3',
-        "dependences_id": 'Viejo palacio'
+        "tramit": 'Atencion psicologica con sesiones de seguimiento',
+        "dependences_id": 'DIF MUNICIPAL'
     },
     {
-        "tramit": 'Pago 4',
-        "dependences_id": 'Viejo palacio'
+        "tramit": 'Imparticion de talleres preventivos, formativos y de consientizacion para la salud, prevencion del embarazo en adolecentes, prevencion del consumo de drogas, bulling, valores, maltrato infantil, violencia sexual, fisica, emocional, moral y economica',
+        "dependences_id": 'DIF MUNICIPAL'
     },
     {
-        "tramit": 'Pago 5',
-        "dependences_id": 'Nuevo Palacio'
+        "tramit": 'Traslado de pacientes para atencion medica de especialidad',
+        "dependences_id": 'DIF MUNICIPAL'
     },
     {
-        "tramit": 'Pago 6',
-        "dependences_id": 'Nuevo Palacio'
+        "tramit": 'Alimentacion a estudiantes foraneos de nivel medio superior y superior, estudiantes indigenas',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+    {
+        "tramit": 'Atencion al adulto mayor con asesoramiento juridico y cuidados preventivos',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+    {
+        "tramit": 'Alimentacion para los primeros 100 dias de vida, distribucion de desayunos frios y calientes, entrega de despensas a poblacion vulnerable',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+    {
+        "tramit": 'Cuidado y atencion de niños/niñas en edad preescolar',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+    {
+        "tramit": 'Corte de cabello basico para la Ciudadania',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+    {
+        "tramit": 'SILLAS DE RUEDAS',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+    {
+        "tramit": 'SILLAS DE RUEDAS PCI',
+        "dependences_id": 'DIF MUNICIPAL'
     }]
 
     
