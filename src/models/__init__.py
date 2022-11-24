@@ -168,7 +168,8 @@ class Requirements(db.Model):
 class Tramits(db.Model):
     __tablename__ = 'tramits'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
-    tramit = db.Column(db.String(100), nullable=False)
+    tramit = db.Column(db.Text, nullable=False)
+    costo = db.Column(db.String(100), nullable=True, default='NULL')
     dependences_id = db.Column(db.Integer, db.ForeignKey('dependences.id', ondelete='SET NULL'), nullable=True)
     created_date = db.Column(db.DateTime, default=datetime.datetime.now)
     update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
@@ -188,6 +189,8 @@ class Dependences(db.Model):
     dia_final = db.Column(db.String(10), nullable=False)
     hora_inicial = db.Column(db.String(10), nullable=False)
     hora_final = db.Column(db.String(10), nullable=False)
+    ubi_lat = db.Column(db.Float, nullable=False)
+    ubi_long = db.Column(db.Float, nullable=False)
     created_date = db.Column(db.DateTime, default=datetime.datetime.now)
     update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
     tramits = db.relationship(
@@ -202,11 +205,3 @@ class Dependences(db.Model):
         backref='Dependence',
         lazy=True
     )
-
-
-
-
-
-
-
-
