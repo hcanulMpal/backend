@@ -10,7 +10,6 @@ ma = Mapa()
 
 @arch.route("/api/arch/mapa", methods =['GET'])
 def mapa():
-    print('si llega alm')
     return ma.mapa()
     
         
