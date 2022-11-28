@@ -10,8 +10,8 @@ class dbDependence:
         "dia_final": 'Viernes',
         "hora_inicial": '8:00 a.m',
         "hora_final": '3:00 p.m',
-        "lat": '123.45698989898',
-        "long": '123.45698989899',
+        "lat": '19.578502437996626',
+        "long": '-88.04547660314498',
     },
     { 
         "dependence": 'DIRECCION DE TURISMO MUNICIPAL',
@@ -19,8 +19,8 @@ class dbDependence:
         "dia_final": 'Viernes',
         "hora_inicial": '8:00 a.m',
         "hora_final": '3:00 p.m',
-        "lat": '123.456192873',
-        "long": '123.456918273',
+        "lat": '19.575314',
+        "long": '-88.044821',
     },
     { 
         "dependence": 'DIRECCION DE CULTURA Y RECREACION MUNICIPAL',
@@ -28,8 +28,8 @@ class dbDependence:
         "dia_final": 'Viernes',
         "hora_inicial": '8:00 a.m',
         "hora_final": '3:00 p.m',
-        "lat": '123.4561987389',
-        "long": '123.4561928371',
+        "lat": '19.5836223',
+        "long": '-88.0430042',
     }]
 
     def is_Data(self):

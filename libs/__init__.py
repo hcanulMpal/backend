@@ -22,10 +22,11 @@ def create_app(config_name='development'):
     
 
     #TODO: importacion para asignar a los Blueprints
-    from src.routes import landing, auth
+    from src.routes import landing, auth, arch
 
      #TODO: Configuracion de los BluePrints
     app.register_blueprint(landing)
     app.register_blueprint(auth)
+    app.register_blueprint(arch)
     
     return app

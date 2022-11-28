@@ -1,6 +1,6 @@
 from flask import jsonify
 from ..models import Imagen,db, ImgCategory
-from ..schemas import schemaImg, schemaImgs
+from ..schemas import schemaImg, schemaImgC
 
 base = db.session
 
@@ -11,7 +11,9 @@ class ImagesList:
         Ims = []
 
         for item in IM:
-            Ims.append([schemaImg.dump(item[0])])
+            Ims.append([schemaImg.dump(item[0]),
+                       schemaImgC.dump(item[1])])
+                       
 
 
         try:
