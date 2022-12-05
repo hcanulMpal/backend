@@ -52,7 +52,123 @@ class dbTramits:
     {
         "tramit": 'SILLAS DE RUEDAS PCI',
         "dependences_id": 'DIF MUNICIPAL'
-    }]
+    },
+    {
+        "tramit": 'PASAJES',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+     {
+        "tramit": 'DESPENSAS',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+     {
+        "tramit": 'ROPA Y CALZADO',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+     {
+        "tramit": 'SUETERS',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+     {
+        "tramit": 'APOYO ESCOLAR',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+    {
+        "tramit": 'MOCHILAS ESCOLARES',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+    {
+        "tramit": 'FARDOS DE LAMINAS',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+    {
+        "tramit": 'FUNERALES',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+    {
+        "tramit": 'PROTESIS',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+     {
+        "tramit": 'BOLSAS DE DIALISIS',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+     {
+        "tramit": 'LENTES',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+     {
+        "tramit": 'MEDICAMENTOS',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+     {
+        "tramit": 'COBERTORES',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+      {
+        "tramit": 'ESTUDIOS DE LABORATORIO',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+      {
+        "tramit": 'EST.MED.ESPEC.',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+      {
+        "tramit": 'CONSULTA ESPECIALIZADA',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+    {
+        "tramit": 'AUXILIARES AUDITIVOS',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+    {
+        "tramit": 'BASTONES',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+    {
+        "tramit": 'ANDADERAS ORTOPEDICAS',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+    {
+        "tramit": 'MULETAS',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+    {
+        "tramit": 'ZAPATOS ORTOPEDICOS',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+    {
+        "tramit": 'FAJAS ORTOPEDICOS',
+        "dependences_id": 'DIF MUNICIPAL'
+    },
+      {
+        "tramit": 'Apoyo en eventos culturales, tales como: caravanas,domingos culturales, participacion orquesta polifacetica, festivales, taleres, galerias y foros',
+        "dependences_id": 'DIRECCION DE CULTURA Y RECREACION MUNICIPAL'
+    },
+    {
+        "tramit": 'Cobros diversos sobre el servicio que ofrecen las diferentes areas',
+        "dependences_id": 'DIRECCION DE INGRESOS'
+   },
+   {
+        "tramit": 'Cotizacion de impuesto predial',
+        "dependences_id": 'DIRECCION DE INGRESOS'
+   },
+   {
+        "tramit": 'Asesorias y gestion para su licencia de funcionamiento',
+        "dependences_id": 'DIRECCION DE INGRESOS'
+   },
+   {
+        "tramit": 'Gestion de tarjetones semifijos',
+        "dependences_id": 'DIRECCION DE INGRESOS'
+   },
+   {
+        "tramit": 'Gestion de tarjetones ambulantes',
+        "dependences_id": 'DIRECCION DE INGRESOS'
+   },
+   {
+        "tramit": 'Declaraciones por saneamiento ambiental',
+        "dependences_id": 'DIRECCION DE INGRESOS'
+   }]
 
     
     def is_Data(self):
