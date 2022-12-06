@@ -1,4 +1,4 @@
-from ..functions.fAuthor import dbAuthor
+from ..functions import dbAuthor
 import requests
 
 Author = dbAuthor()

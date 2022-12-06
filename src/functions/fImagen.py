@@ -13,11 +13,16 @@ class ImagesList:
         for item in IM:
             Ims.append([schemaImg.dump(item[0]),
                        schemaImgC.dump(item[1])])
+
+        Ims2 = []
+
+        for item in Ims:
+            Ims2.append({'id':item[0]['id'],'url':item[0]['url_photo'],'descripcion':item[0]['description'],'categoria':item[1]['categorys'],'fecha':item[1]['created_date']})
                        
 
 
         try:
-             return jsonify({"data": Ims})
+             return jsonify({"data": Ims2})
         except Exception as error:
             return jsonify({"error":str(error)}), 500
 

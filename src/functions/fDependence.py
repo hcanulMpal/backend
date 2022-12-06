@@ -32,7 +32,7 @@ class dbDependence:
         "long": '-88.0430042',
     },
     { 
-        "dependence": 'INGRESOS',
+        "dependence": 'DIRECCION DE INGRESOS',
         "dia_inicial": 'Lunes',
         "dia_final": 'Viernes',
         "hora_inicial": '8:00 a.m',
