@@ -8,3 +8,4 @@ from .schemaDependencias import schemaDependence, schemaDependences
 from .schemaRequirements import schemaRequi, schemaRequire
 from .schemaTramits import schemaTrami, schemaTramit
 from .schemaImgCategory import schemaImgC,schemaImgsC
+from .schemaType import schemaTy, schemaTyp

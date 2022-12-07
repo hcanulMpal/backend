@@ -5,6 +5,7 @@ from ..controllers import Authorization
 from ..controllers import listAvisos
 from ..controllers import listaImages
 from ..controllers import listaDependence
+from ..controllers import listAutotipo
 
 
 jwt = JWTManager(current_app)
@@ -15,7 +16,7 @@ autoriza = Authorization()
 fu = listAvisos()
 li = listaImages()
 lD = listaDependence()
-
+lT = listAutotipo()
 
 @auth.route("/api/autho/signin", methods=['POST'])
 def singIn():
@@ -33,6 +34,10 @@ def listaImg():
 @auth.route("/api/autho/dependence", methods = ['GET'])
 def listD():
 	return lD.listD()
+
+@auth.route("/api/autho/autor2", methods= ['GET'])
+def listT():
+	return lT.listaT()
 	
 
 

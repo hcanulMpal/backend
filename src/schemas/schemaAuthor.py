@@ -6,7 +6,7 @@ ma = Marshmallow()
 #TODO : Declaracion de Schema
 class Schema_Author(ma.Schema):
     class Meta:
-        fields = ('id','name')
+        fields = ('id','name','mobile','email','id_type')
 
 
 #TODO: Istancia de los distintos Schemas
