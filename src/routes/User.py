@@ -8,6 +8,7 @@ from ..controllers import listaDependence
 from ..controllers import listAutotipo
 
 
+
 jwt = JWTManager(current_app)
 auth = Blueprint('auth', __name__)
 cors = CORS(auth, resources={ r"/api/*":{"origins":"*"}})
@@ -17,6 +18,7 @@ fu = listAvisos()
 li = listaImages()
 lD = listaDependence()
 lT = listAutotipo()
+
 
 @auth.route("/api/autho/signin", methods=['POST'])
 def singIn():
@@ -38,6 +40,8 @@ def listD():
 @auth.route("/api/autho/autor2", methods= ['GET'])
 def listT():
 	return lT.listaT()
+
+
 	
 
 

@@ -18,3 +18,4 @@ from .fImagen import ImagesList
 from .fDepndenceschema import listDependencef
 from .fAuthor import dbAuthor
 from .functionAutipe import list_Type
+from .fNumero import dbNumero

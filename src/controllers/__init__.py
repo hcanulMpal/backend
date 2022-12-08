@@ -6,3 +6,4 @@ from .ImagenContriller import listaImages
 from .dependenceController import listaDependence
 from .AuthorController import AuthorCtl
 from .AutotipeContoller import listAutotipo
+from .NumeroController import NumeroCtl
