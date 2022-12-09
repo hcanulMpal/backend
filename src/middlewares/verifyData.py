@@ -9,7 +9,6 @@ def verifyAndCreateData():
     authors = fAuth().is_Data()
     notices = dbNotices().is_validate()
     imgCat = dbImgCat().is_Data()
-    img = dbImage().is_Data()
     dep = dbDependence().is_Data()
     tra = dbTramits().is_Data()
     req = dbRequirements().id_Data()
