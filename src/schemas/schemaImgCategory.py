@@ -6,7 +6,7 @@ ma = Marshmallow()
 #TODO : Declaracion de Schema
 class Schema_Img_Ctegory(ma.Schema):
     class Meta:
-        fields = ('id','categorys','created_date')
+        fields = ('id','categorys')
 
 
 #TODO: Istancia de los distintos Schemas

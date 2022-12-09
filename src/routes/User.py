@@ -1,4 +1,4 @@
-from flask import Blueprint, current_app, request,json
+from flask import Blueprint, current_app, request
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager, jwt_required
 from ..controllers import Authorization
@@ -7,9 +7,7 @@ from ..controllers import listaImages
 from ..controllers import listaDependence
 from ..controllers import listAutotipo
 from ..controllers import listAvisos2
-
-
-
+from ..controllers import ImgCatCtl
 
 jwt = JWTManager(current_app)
 auth = Blueprint('auth', __name__)
@@ -21,6 +19,8 @@ li = listaImages()
 lD = listaDependence()
 lT = listAutotipo()
 fu2 = listAvisos2()
+imgC = ImgCatCtl()
+
 
 
 @auth.route("/api/autho/signin", methods=['POST'])
@@ -39,6 +39,10 @@ def listA2():
 @auth.route("/api/autho/Image", methods =['GET'])
 def listaImg():
 	return li.listaImg()
+
+@auth.route("/api/autho/ImageCategory", methods =['GET'])
+def setId_Category():
+	return imgC.setId_Category()
 
 @auth.route("/api/autho/dependence", methods = ['GET'])
 def listD():

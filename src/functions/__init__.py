@@ -20,3 +20,4 @@ from .fAuthor import dbAuthor
 from .functionAutipe import list_Type
 from .fNumero import dbNumero
 from .functionPrensa2 import Avisos_list2
+from .functionid_category import dbImgId_Category
