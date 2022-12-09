@@ -20,7 +20,7 @@ class Avisos_list:
         Avs2 = []
 
         for item in Avs:
-            Avs2.append({'id':item[0]['id'],'titulo':item[0]['title'],'descripcion':item[0]['text'],'imagen':item[0]['url_photo'],'fecha':item[0]['created_date'],'autor':item[1]['name'],'id_categoria':item[2]['id'],'categoria':item[2]['category']})
+            Avs2.append({'id':item[0]['id'],'titulo':item[0]['title'],'descripcion':item[0]['text'],'imagen':item[0]['url_photo'],'fecha':item[0]['created_date'],'autor':item[1]['name'],'categoria':item[2]['category']})
        
 
         try:

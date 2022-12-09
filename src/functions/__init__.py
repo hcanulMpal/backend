@@ -19,3 +19,4 @@ from .fDepndenceschema import listDependencef
 from .fAuthor import dbAuthor
 from .functionAutipe import list_Type
 from .fNumero import dbNumero
+from .functionPrensa2 import Avisos_list2

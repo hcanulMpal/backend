@@ -7,3 +7,4 @@ from .dependenceController import listaDependence
 from .AuthorController import AuthorCtl
 from .AutotipeContoller import listAutotipo
 from .NumeroController import NumeroCtl
+from .controlPrensa2 import listAvisos2
