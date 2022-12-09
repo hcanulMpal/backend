@@ -8,7 +8,6 @@ import cloudinary.api
 class upFile():
 
     def uploadFile(self, data):
-        print('llego aqui')
 
         load_dotenv()
 
@@ -16,11 +15,14 @@ class upFile():
         upload_result = None
 
         fileToUpload = data
-        if fileToUpload:
-            upload_result = cloudinary.uploader.upload(fileToUpload)
-            print(upload_result)
-            return jsonify(upload_result)
-
+        try:    
+            if fileToUpload:
+                print('llego aqui')
+                upload_result = cloudinary.uploader.upload(fileToUpload)
+                print(upload_result)
+                return jsonify(upload_result["secure_url"])
+        except Exception as error:
+            return error, 500
         
 
     

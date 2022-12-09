@@ -160,6 +160,7 @@ class Requirements(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
     requirement = db.Column(db.String(100), nullable=False)
     tramits_id = db.Column(db.Integer, db.ForeignKey('tramits.id', ondelete='SET NULL'), nullable=True)
+    service_id = db.Column(db.Integer, db.ForeignKey('services.id', ondelete='SET NULL'), nullable=True)
     dependences_id = db.Column(db.Integer, db.ForeignKey('dependences.id', ondelete='SET NULL'), nullable=True)
     created_date = db.Column(db.DateTime, default=datetime.datetime.now)
     update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
@@ -203,5 +204,19 @@ class Dependences(db.Model):
         'Requirements',
         uselist=False,
         backref='Dependence',
+        lazy=True
+    )
+
+class Services (db.Model):
+    __tablename__ = 'services'
+    id = db.Column(db.Integer, primary_key= True, autoincrement=True, nullable=False)
+    servicio = db.Column(db.String(100), nullable=False)
+    dependences_id = db.Column(db.Integer, db.ForeignKey('dependences.id', ondelete='SET NULL'), nullable=True)
+    created_date = db.Column(db.DateTime, default=datetime.datetime.now)
+    update_on = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
+    requirements = db.relationship(
+        'Requirements',
+        uselist=False,
+        backref='Services',
         lazy=True
     )

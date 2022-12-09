@@ -7,12 +7,13 @@ from ..controllers.AuthorController import AuthorCtl
 from ..controllers.CategoryController import CategoryCtl
 from ..controllers.blobController import BlobCtl
 from ..controllers.upFileController import upFile
+from ..controllers import ImageCtl
 
 
 landing = Blueprint('admini', __name__)
 cors = CORS(landing, resources={ r"/api/*":{"origins":"*"}})
 
-
+Img = ImageCtl()
 Offi = OfficialsCtl()
 Gobs = GoverningsCtl()
 #Pre = PrensaCtl()
@@ -59,3 +60,8 @@ def setBlob():
 @landing.route("/api/upload", methods=['POST'])
 def upFile():
     return Uf.uploadFile(request.files['file'])
+
+
+@landing.route("/api/guardI", methods=['POST'])
+def saveI():
+    return Img.saveImage(request.json)

@@ -16,3 +16,4 @@ from .fTramits import dbTramits
 from .fRequirements import dbRequirements
 from .fImagen import ImagesList
 from .fDepndenceschema import listDependencef
+from .fImage import dbImage

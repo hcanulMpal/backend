@@ -1,6 +1,9 @@
 from ..models import db, Imagen
 from .fImageCategory import dbImgCat
+
+
 base = db.session
+
 
 class dbImage:
 
@@ -20,11 +23,4 @@ class dbImage:
             for item in self.img:
                 self.saveImage(item)
 
-    def saveImage(self, data):
-        imagen = Imagen(
-            url_photo = data['url_photo'],
-            imgCategory_id = dbImgCat().findImageCategory(data['imgCategory_id']),
-            description = data['description']
-        )
-        base.add(imagen)
-        base.commit()
+    

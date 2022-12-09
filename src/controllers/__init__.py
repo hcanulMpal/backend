@@ -4,3 +4,5 @@ from .signUp import Authorization
 from .controlPrensa import listAvisos
 from .ImagenContriller import listaImages
 from .dependenceController import listaDependence
+from .fImageP import ImageCtl
+#from .upFileController import upFile
