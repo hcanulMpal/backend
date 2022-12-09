@@ -8,11 +8,12 @@ U = upFile()
 class ImageCtl:
 
     def saveImage(self, data):
-        imagen = Imagen(
+        print(data)
+        #imagen = Imagen(
             #url_photo = U.uploadFile(data['0']),
-            imgCategory_id = dbImgCat().findImageCategory(data['0']),
-            description = data['1']
-        )
-        base.add(imagen)
-        base.commit()
+            #imgCategory_id = dbImgCat().findImageCategory(data[0]),
+            #description = data['1']
+        #)
+        #base.add(imagen)
+        #base.commit()
     

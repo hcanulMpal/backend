@@ -8,7 +8,7 @@ import cloudinary.api
 class upFile():
 
     def uploadFile(self, data):
-
+        print(data)
         load_dotenv()
 
         cloudinary.config(cloud_name = 'municipio-de-felipe-carrillo-puerto', api_key='939831556648318', api_secret= 'gpzkhczuJXhtXWv7ozmIBSzTLiQ')

@@ -10,7 +10,7 @@ from ..controllers import ImageCtl
 from ..controllers import NumeroCtl
 
 
-landing = Blueprint('admini', __name__)
+landing = Blueprint('landing', __name__)
 cors = CORS(landing, resources={ r"/api/*":{"origins":"*"}})
 
 Img = ImageCtl()
