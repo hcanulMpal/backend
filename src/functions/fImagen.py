@@ -17,7 +17,7 @@ class ImagesList:
         Ims2 = []
 
         for item in Ims:
-            Ims2.append({'id':item[0]['id'],'url':item[0]['url_photo'],'descripcion':item[0]['description'],'categoria':item[1]['categorys'],'fecha':item[1]['created_date']})
+            Ims2.append({'id':item[0]['id'],'url':item[0]['url_photo'],'descripcion':item[0]['description'],'categoria':item[1]['categorys']})
                        
 
 

@@ -10,3 +10,4 @@ from .AuthorController import AuthorCtl
 from .AutotipeContoller import listAutotipo
 from .NumeroController import NumeroCtl
 from .controlPrensa2 import listAvisos2
+from .Id_Category_Img_Ctl import ImgCatCtl
