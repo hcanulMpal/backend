@@ -1,6 +1,6 @@
 from ..models import db, Author, Type
 from .governingsType import fType
-from ..schemas.schemaAuthor import schemaAu, schemaAus
+from ..schemas import schemaAu, schemaAus
 
 base = db.session
 

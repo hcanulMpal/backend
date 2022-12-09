@@ -4,11 +4,11 @@ from flask_marshmallow import Marshmallow
 ma = Marshmallow()
 
 #TODO : Declaracion de Schema
-class Schema_Img_Ctegory(ma.Schema):
+class Schema_Num(ma.Schema):
     class Meta:
-        fields = ('id','categorys','created_date')
+        fields = ('id','name','mobile')
 
 
 #TODO: Istancia de los distintos Schemas
-schemaImgC = Schema_Img_Ctegory()
-schemaImgsC = Schema_Img_Ctegory(many=True)
+schemaNu= Schema_Num()
+schemaNume = Schema_Num(many=True)

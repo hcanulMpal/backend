@@ -17,3 +17,7 @@ from .fRequirements import dbRequirements
 from .fImagen import ImagesList
 from .fDepndenceschema import listDependencef
 from .fImage import dbImage
+from .fAuthor import dbAuthor
+from .functionAutipe import list_Type
+from .fNumero import dbNumero
+from .functionPrensa2 import Avisos_list2
