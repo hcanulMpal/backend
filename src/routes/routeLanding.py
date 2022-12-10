@@ -52,14 +52,14 @@ def setCategory():
 def setBlob():
     return Blobe.setBlob(request.file['file'])   
     
-@landing.route("/api/upload", methods=['POST'])
+@landing.route("/api/landing/upload", methods=['POST'])
 def upFile():
     return Uf.uploadFile(request.files['file'])
 
 
-@landing.route("/api/guardI", methods=['POST'])
+@landing.route("/api/landing/guardI", methods=['POST'])
 def saveI():
-    return Img.saveImage(request.json)
+    return Img.saveImage(Uf.uploadFile(request.form['file']))
 
     
 @landing.route("/api/landing/NumeroE", methods=["GET"])

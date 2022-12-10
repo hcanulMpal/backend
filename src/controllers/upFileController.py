@@ -8,7 +8,6 @@ import cloudinary.api
 class upFile():
 
     def uploadFile(self, data):
-        print(data)
         load_dotenv()
 
         cloudinary.config(cloud_name = 'municipio-de-felipe-carrillo-puerto', api_key='939831556648318', api_secret= 'gpzkhczuJXhtXWv7ozmIBSzTLiQ')
@@ -20,7 +19,8 @@ class upFile():
                 print('llego aqui')
                 upload_result = cloudinary.uploader.upload(fileToUpload)
                 print(upload_result)
-                return jsonify(upload_result["secure_url"])
+
+                return upload_result["secure_url"]
         except Exception as error:
             return error, 500
         
